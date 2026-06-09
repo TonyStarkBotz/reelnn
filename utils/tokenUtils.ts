@@ -1,4 +1,4 @@
-import * as jose from 'jose';
+import { SignJWT, jwtVerify, type JWTPayload } from 'jose';
 import { SITE_SECRET } from '@/config';
 
 export interface StreamParams {
@@ -34,7 +34,7 @@ export async function generateStreamToken(params: StreamParamsInput): Promise<st
 
   const secret = new TextEncoder().encode(SITE_SECRET);
   
-  return await new jose.SignJWT(tokenData as jose.JWTPayload)
+  return await new SignJWT(tokenData as JWTPayload)
     .setProtectedHeader({ alg: 'HS256' }) 
     .setIssuedAt()
     .setExpirationTime(tokenData.expiry)
@@ -44,7 +44,7 @@ export async function generateStreamToken(params: StreamParamsInput): Promise<st
 export async function verifyStreamToken(token: string): Promise<StreamParams | null> {
   try {
     const secret = new TextEncoder().encode(SITE_SECRET);
-    const { payload } = await jose.jwtVerify(token, secret);
+    const { payload } = await jwtVerify(token, secret);
     const decoded = payload as unknown as StreamParams;
     
     const now = Math.floor(Date.now() / 1000);
