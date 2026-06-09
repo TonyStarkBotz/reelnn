@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, forwardRef } from "react";
+import { useState, useEffect, useMemo, forwardRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { debounce } from "lodash";
@@ -25,8 +25,8 @@ const Search = forwardRef<HTMLDivElement, SearchProps>(
     const [error, setError] = useState<string | null>(null);
     const [lastSearchQuery, setLastSearchQuery] = useState("");
 
-    const debouncedSearch = useCallback(
-      debounce(async (query: string) => {
+    const debouncedSearch = useMemo(
+      () => debounce(async (query: string) => {
         if (query.length < 3) {
           setResults([]);
           return;
