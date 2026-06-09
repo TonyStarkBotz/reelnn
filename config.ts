@@ -1,13 +1,13 @@
 // SITE CONFIG
 export const NEXT_PUBLIC_SITE_NAME =
-  process.env.NEXT_PUBLIC_SITE_NAME || "reelnn";
+  process.env.NEXT_PUBLIC_SITE_NAME || "TV Horizon";
 
 export const NEXT_PUBLIC_FOOTER_DESC =
   process.env.NEXT_PUBLIC_FOOTER_DESC ||
   "This website does not host any files on its own servers; it simply provides links to media files stored in telegram.";
 
 export const NEXT_PUBLIC_TELEGRAM_CONTACT =
-  process.env.NEXT_PUBLIC_FOOTER_COPYRIGHT || "https://t.me/reelnnUpdates";
+  process.env.NEXT_PUBLIC_FOOTER_COPYRIGHT || "https://t.me/Movietimestv";
 
 export const NEXT_PUBLIC_WHATSAPP_CONTACT =
   process.env.NEXT_PUBLIC_WHATSAPP_CONTACT || "";
@@ -15,15 +15,15 @@ export const NEXT_PUBLIC_WHATSAPP_CONTACT =
 export const NEXT_PUBLIC_INSTAGRAM_CONTACT =
   process.env.NEXT_PUBLIC_INSTAGRAM_CONTACT || "";
 
-export const SITE_SECRET = process.env.SITE_SECRET || "your_secret_key";
+export const SITE_SECRET = process.env.SITE_SECRET || "X9a7B2cQ4mN8zR5t";
 
 // Backend API
-export const BACKEND_URL = process.env.BACKEND_URL || "http://0.0.0.0:6519";
+export const BACKEND_URL = process.env.BACKEND_URL || "https://integrated-rattlesnake-tonystark75-85e4c369.koyeb.app";
 
 
 // Telegram
 export const NEXT_PUBLIC_TELEGRAM_BOT_NAME =
-  process.env.NEXT_PUBLIC_TELEGRAM_BOT_NAME || "reelnnbot";
+  process.env.NEXT_PUBLIC_TELEGRAM_BOT_NAME || "DigitalGalaxyHQxBot@DigitalGalaxyHQxBot";
 
 
 // Shortener API
